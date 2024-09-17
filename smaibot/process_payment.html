@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation - SmaiBot</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Manage My Account</a></li>
+                <li><a href="pricing.html">Our Pricing Plan</a></li>
+                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Payment Confirmation</h1>
+        <p>Thank you for your purchase! Your payment has been processed successfully.</p>
+        <p>Your plan: <span id="confirmed-plan"></span></p>
+        <p>Payment method: <span id="confirmed-method"></span></p>
+        <p>We will send you a confirmation email shortly.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 SmaiBot. All rights reserved.</p>
+    </footer>
+    <script>
+        // Get the selected plan and payment method from URL parameters and display them
+        const urlParams = new URLSearchParams(window.location.search);
+        const plan = urlParams.get('plan');
+        const method = urlParams.get('method');
+        document.getElementById('confirmed-plan').textContent = plan.charAt(0).toUpperCase() + plan.slice(1);
+        document.getElementById('confirmed-method').textContent = method.charAt(0).toUpperCase() + method.slice(1);
+    </script>
+</body>
+</html>
